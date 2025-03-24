@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>LOGIN</h2>
+    <form th:action="@{/Login}" method="post">
+        <input type="hidden" name="tipo" th:value="${tipo}" />
+        <label>CPF | Usuario:</label><br/>
+        <input type="text" name="usuario" placeholder="CPF | Usuario"/><br/><br/>
+        <label>Senha:</label><br/>
+        <input type="password" name="senha" placeholder="Senha"/><br/><br/>
+        <button type="submit">LOGAR</button>
+    </form>
+    <div th:if="${error}">
+        <p th:text="${error}" style="color:red"></p>
+    </div>
+</body>
+</html>

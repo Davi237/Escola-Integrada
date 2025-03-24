@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Página do Professor</title>
+</head>
+<body>
+    <h2>Página do Professor</h2>
+    <form th:action="@{/professor/cadastrarNotas}" method="post">
+        <input type="text" name="nomeAluno" placeholder="Nome do Aluno:" required /><br/><br/>
+        <input type="text" name="nota1" placeholder="Nota 1:" required /><br/><br/>
+        <input type="text" name="nota2" placeholder="Nota 2:" required /><br/><br/>
+        <input type="text" name="nota3" placeholder="Nota 3:" required /><br/><br/>
+        <label>Disciplina:</label>
+        <select name="disciplina">
+            <option value="Ciencias">Ciências</option>
+            <option value="Geografia">Geografia</option>
+            <option value="Historia">História</option>
+            <option value="Matematica">Matemática</option>
+            <option value="Portugues">Português</option>
+        </select><br/><br/>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <div th:if="${error}">
+        <p th:text="${error}" style="color:red"></p>
+    </div>
+    <div th:if="${message}">
+        <p th:text="${message}" style="color:green"></p>
+    </div>
+</body>
+</html>
